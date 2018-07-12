@@ -2,12 +2,11 @@ FROM ubuntu:16.04
 MAINTAINER jacob_shih
 WORKDIR /home
 
-# Update Ubuntu Software repository
-RUN apt-get update
-
 # install for development
-RUN apt-get install -y git subversion python
-RUN apt-get install -y \
+RUN apt-get update; \
+    apt-get install -y --fix-missing \
+    git \
+    subversion \
     automake \
     bc \
     cpio \
@@ -18,13 +17,15 @@ RUN apt-get install -y \
     libtool \
     ncurses-dev \
     python \
+    python3-pip \
     ruby \
     sharutils \
     u-boot-tools \
     zlib1g-dev
 
 # install additional tools
-RUN apt-get install -y \
+RUN apt-get update; \
+    apt-get install -y \
     wget \
     curl \
     tzdata \
