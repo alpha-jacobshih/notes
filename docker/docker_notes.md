@@ -23,6 +23,9 @@
    1. [load image](#load_image)
    1. [show history of image](#show_history_of_image)
 
+1. misc
+   1. [Solving Docker permission denied](#permission_denied)
+
 1. [examples](docker_examples.md)
    1. [create a ubuntu 14.04 container for arm 4.3.2 toolchain](docker_examples.md#create_ubuntu_1404_container_for_arm_toolchain)
    1. [create a ubuntu 16.04 container for meson build system](docker_examples.md#create_ubuntu_1604_container_for_meson_build_system)
@@ -400,3 +403,18 @@ Usage:  docker history [OPTIONS] IMAGE
 docker history alphadocker/ubt1604_hc1892_user:0.01
 ```
 
+---
+
+## misc
+
+<a name="permission_denied" />
+
+### Solving Docker permission denied
+
+* [Solving Docker permission denied while trying to connect to the Docker daemon socket](https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/)
+
+```
+sudo usermod -a -G docker $USER
+```
+
+---
