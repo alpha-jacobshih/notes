@@ -25,6 +25,7 @@
 
 1. misc
    1. [Solving Docker permission denied](#permission_denied)
+   1. [Setup terminal width and height parameters to container with docker exec command](#resize_terminal)
 
 1. [examples](docker_examples.md)
    1. [create a ubuntu 14.04 container for arm 4.3.2 toolchain](docker_examples.md#create_ubuntu_1404_container_for_arm_toolchain)
@@ -415,6 +416,14 @@ docker history alphadocker/ubt1604_hc1892_user:0.01
 
 ```
 sudo usermod -a -G docker $USER
+```
+
+<a name="resize_terminal" />
+
+### Setup terminal width and height parameters to container with docker exec command
+
+```
+docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -it [CONTAINER] [COMMAND]
 ```
 
 ---
