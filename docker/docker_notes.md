@@ -4,35 +4,36 @@
 1. [references](#references)
 1. [docker basic](#docker_basic)
 1. [install docker](#install_docker)
-   1. [set up docker repository](#set_up_docker_repository)
-   1. [install docker ce](#install_docker_ce)
+    1. [set up docker repository](#set_up_docker_repository)
+    1. [install docker ce](#install_docker_ce)
 
 1. [basic docker operations](#basic_docker_operations)
-   1. [list docker images](#list_docker_images)
-   1. [run a docker and check ubuntu version of docker image](#run_a_docker_and_check_ubuntu_version_of_docker_image)
-   1. [create a container](#create_a_container)
-   1. [start a container](#start_a_container)
-   1. [stop a container](#stop_a_container)
-   1. [attach to a running container](#attach_to_a_running_container)
-   1. [docker run](#docker_run)
-   1. [list container](#list_container)
-   1. [create docker image](#create_docker_image)
-   1. [export container](#export_container)
-   1. [import container](#import_container)
-   1. [save image](#save_image)
-   1. [load image](#load_image)
-   1. [show history of image](#show_history_of_image)
+    1. [list docker images](#list_docker_images)
+    1. [run a docker and check ubuntu version of docker image](#run_a_docker_and_check_ubuntu_version_of_docker_image)
+    1. [create a container](#create_a_container)
+    1. [start a container](#start_a_container)
+    1. [stop a container](#stop_a_container)
+    1. [attach to a running container](#attach_to_a_running_container)
+    1. [docker run](#docker_run)
+    1. [list container](#list_container)
+    1. [create docker image](#create_docker_image)
+    1. [export container](#export_container)
+    1. [import container](#import_container)
+    1. [save image](#save_image)
+    1. [load image](#load_image)
+    1. [show history of image](#show_history_of_image)
 
 1. misc
-   1. [Solving Docker permission denied](#permission_denied)
-   1. [Setup terminal width and height parameters to container with docker exec command](#resize_terminal)
+    1. [Solving Docker permission denied](#permission_denied)
+    1. [Setup terminal width and height parameters to container with docker exec command](#resize_terminal)
 
 1. [examples](docker_examples.md)
-   1. [create a ubuntu 14.04 container for arm 4.3.2 toolchain](docker_examples.md#create_ubuntu_1404_container_for_arm_toolchain)
-   1. [create a ubuntu 16.04 container for meson build system](docker_examples.md#create_ubuntu_1604_container_for_meson_build_system)
-   1. [create a ubuntu 16.04 container for hc1892 sdk](docker_examples.md#create_ubuntu_1604_container_for_hc1892_sdk)
-   1. [create a ubuntu 14.04 container for dhpw310av](docker_examples.md#create_ubuntu_1404_container_for_dhpw310av)
-   1. [ftp server](docker_examples.md#ftp_server)
+    1. [create a ubuntu 14.04 container for arm 4.3.2 toolchain](docker_examples.md#create_ubuntu_1404_container_for_arm_toolchain)
+    1. [create a ubuntu 16.04 container for meson build system](docker_examples.md#create_ubuntu_1604_container_for_meson_build_system)
+    1. [create a ubuntu 16.04 container for hc1892 sdk](docker_examples.md#create_ubuntu_1604_container_for_hc1892_sdk)
+    1. [create a ubuntu 14.04 container for dhpw310av](docker_examples.md#create_ubuntu_1404_container_for_dhpw310av)
+    1. [create a ubuntu 16.04 container for buildroot](docker_examples.md#create_ubuntu_1604_container_for_buildroot)
+    1. [ftp server](docker_examples.md#ftp_server)
 
 ---
 
@@ -305,6 +306,21 @@ docker ps -l
 - to show only running containers
 ```
 docker ps
+```
+
+- customize the output format of container list
+
+```
+docker ps -a --format "table {{.ID}}\\t{{.Names}}\\t{{.Image}}\\t{{.Status}}\\t{{.Ports}}"
+```
+
+```
+CONTAINER ID        NAMES               IMAGE                              STATUS                      PORTS
+0be56e0c89cb        ibox                alphadocker/ibox:0.01              Up 13 minutes
+3be97f1d29e8        eager_lichterman    openwrt-x86-generic-rootfs         Exited (255) 4 days ago
+ae751a3828a3        xbuildroot          alphadocker/ubt1604_kamelot:0.01   Exited (0) 3 weeks ago
+03b106352c80        august              alphadocker/ubt1104_august:0.01    Exited (255) 3 weeks ago
+3b509af9e6c8        jolly_joliot        37ecdd347f2c                       Exited (100) 2 months ago
 ```
 
 <a name="create_docker_image" />
