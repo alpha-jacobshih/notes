@@ -27,6 +27,12 @@ docker start herokugo
 docker exec -it herokugo su user
 ```
 
+* or download and install heroku package from command line.
+
+```
+curl https://cli-assets.heroku.com/install.sh | sh
+```
+
 ## heroku
 
 * login heroku
