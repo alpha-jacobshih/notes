@@ -151,7 +151,7 @@ docker run -p 127.0.0.1:7070:7070 88250/wide:latest ./wide -docker=true -channel
 
 * create a dockerfile for go container.
 
-[gloang.dockerfile](gloang.dockerfile)
+[golang.dockerfile](golang.dockerfile)
 
 * build the dockerfile.
 
