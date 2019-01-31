@@ -14,7 +14,7 @@
 
 - create and build a docker environment for heroku.
 
-### jbot
+### lbot
 
 - notes of line bot and examples.
 
