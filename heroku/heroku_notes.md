@@ -18,14 +18,48 @@
 
 ## setup environment
 
-* create a docker container.
+### build and create a docker container
 
-```
-docker build -f herokugo.dockerfile -t jacobrepo/herokugo:0.01 .
-docker create -it --name herokugo --dns 172.19.10.100 -v /home/jacob_shih/volumes/herokugo:/home/user/herokugo jacobrepo/herokugo:0.01
-docker start herokugo
-docker exec -it herokugo su user
-```
+* dockerfile.
+
+    [herokugo.dockerfile](./dockerfiles/herokugo.dockerfile)
+
+* docker-compose.yml
+
+    [docker-compose.yml](./docker-compose.yml)
+
+* build the image.
+
+    - export user and group id first.
+
+    ```
+    export UID=`id -u $USER`
+    export GID=`id -g $USER`
+    ```
+
+    - build the image.
+
+    ```
+    docker-compose build
+    ```
+
+    - create and start the container in background.
+    
+    ```
+    docker-compose up -d
+    ```
+
+* enter the container.
+
+    ```
+    docker exec -it herokugo sh
+    ```
+
+* stop and remove the container.
+
+    ```
+    docker-compose down
+    ```
 
 * or download and install heroku package from command line.
 
