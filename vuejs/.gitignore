@@ -1,3 +1,6 @@
 # temporary folder
 temp
 test
+
+# komodo project files
+*.komodoproject

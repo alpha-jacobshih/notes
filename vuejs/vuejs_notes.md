@@ -37,6 +37,40 @@ sudo npm install -g @vue/cli
 
 - created with **new Vue()**.
 
+    - el: a css selector to mount on a dom element.
+
+        - identifier selector
+
+        ```
+        <div id="app">
+          {{ message }}
+        </div>
+        <script>
+        var app = new Vue({
+          el: '#app',
+          data: {
+            message: 'an identifier selector.'
+          }
+        });
+        </script>
+        ```
+
+        - class selector
+
+        ```
+        <div class="appclass">
+          {{ message }}
+        </div>
+        <script>
+        var appclass = new Vue({
+          el: '.appclass',
+          data: {
+            message: 'a class selector.'
+          }
+        });
+        </script>
+        ```
+
 ### vue binding
 
 - the property el: binds the new vue object to the html element with id="app".
@@ -49,6 +83,29 @@ sudo npm install -g @vue/cli
 ### event handling
 
 - v-on is the attribute added to the dom elements to listen to the events in vue.
+
+## run the vue project from scratch
+
+### create a vue project
+
+- create a vue project named hellovue.
+
+```
+vue init webpack hellovue
+```
+
+- run the created project
+
+```
+cd hellovue
+npm run dev
+```
+
+- if run inside a docker container, you should modify package.json to set host to 0.0.0.0 for webpack-dev-server.
+
+```
+    "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",
+```
 
 ## examples
 
