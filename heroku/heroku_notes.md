@@ -52,7 +52,7 @@
 * enter the container.
 
     ```
-    docker exec -it herokugo sh
+    docker exec -it herokugo bash
     ```
 
 * stop and remove the container.
