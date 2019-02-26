@@ -23,6 +23,9 @@
     1. [load image](#load_image)
     1. [show history of image](#show_history_of_image)
 
+1. docker-compose
+    1. [install docker compose](#install_docker_compose)
+
 1. misc
     1. [Solving Docker permission denied](#permission_denied)
     1. [Setup terminal width and height parameters to container with docker exec command](#resize_terminal)
@@ -418,6 +421,26 @@ Usage:  docker history [OPTIONS] IMAGE
 - show the history of an image
 ```
 docker history alphadocker/ubt1604_hc1892_user:0.01
+```
+
+---
+
+## docker-compose
+
+<a name="install_docker_compose" />
+
+### install docker compose
+
+- download and setup docker-compose
+
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+- grant permission for docker-compose
+
+```
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ---
