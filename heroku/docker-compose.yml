@@ -15,7 +15,7 @@ services:
         - "18080:8080"
         - "18000:8000"
         volumes:
-        - ~/volumes/repo/heroku:/home/user/herokugo
+        - ~/volumes/side/herokugo:/home/user/herokugo
         working_dir: /home/user/herokugo
         container_name: herokugo
         entrypoint: /bin/sh
