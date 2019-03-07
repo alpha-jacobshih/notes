@@ -31,12 +31,18 @@ RUN echo no | dpkg-reconfigure dash
 # Tell docker that all future commands should run as the user named user.
 USER $USER
 
-# set up working directory
+# setup environment variables
 ENV HOME /home/$USER
 ENV GOPATH $HOME/herokugo
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
+
+# install go packages
+RUN go get -u github.com/kardianos/govendor
+
+
+# set up working directory
 RUN chown $USER:$USER -R "$HOME"
 WORKDIR $HOME
 
