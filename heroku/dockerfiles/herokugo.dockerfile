@@ -40,7 +40,7 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
 # install go packages
 RUN go get -u github.com/kardianos/govendor
-RUN go get -u github.com/cweill/gotests/...
+RUN go get -u github.com/cweill/gotests
 
 # set up working directory
 RUN chown $USER:$USER -R "$HOME"
