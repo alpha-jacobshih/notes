@@ -95,6 +95,18 @@ sudo apt-get install golang
         govendor sync
         ```
 
+        * add new packages or update the given package in *vendor* directory.
+
+        ```
+        govendor fetch github.com/pathto/package
+        ```
+
+    * .gitignore to ignore sub directories in *vendor* directory.
+
+    ```
+    # local go dependencies
+    vendor/*/
+    ```
 
 * goclipse configuration
 
