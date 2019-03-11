@@ -1,6 +1,5 @@
 FROM golang:1.10
 MAINTAINER jacob_shih "jacob_shih@hotmail.com"
-WORKDIR /home
 
 # update ubuntu software repository
 RUN apt-get update
@@ -11,36 +10,42 @@ RUN apt-get install -y \
     tzdata \
     sudo
 
+# add user
+ENV USER=user
+RUN useradd -c 'docker $USER' -m -d /home/$USER -s /bin/bash $USER
+
+# allow sudo usage
+RUN echo "$USER ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/$USER
+RUN chmod 0440 /etc/sudoers.d/$USER
+
 # set timezone
 ENV TZ=Asia/Taipei
 RUN dpkg-reconfigure -f noninteractive tzdata
 
-# add user
-RUN useradd -c 'docker user' -m -d /home/user -s /bin/bash user
-
-# allow sudo usage
-RUN echo "user ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/user
-RUN chmod 0440 /etc/sudoers.d/user
-
 # reconfigure to use bash
 RUN echo no | dpkg-reconfigure dash
 
-# initialize the user profile from the skeleton profile
-RUN cp /etc/skel/.bashrc /home/user/.bashrc \
-  && echo 'PATH="/usr/local/go/bin:$GOPATH/bin:$HOME/bin:$PATH"' >> /home/user/.bashrc
+# Tell docker that all future commands should run as the user named user.
+USER $USER
 
-# run as a user
-CMD ["su", "user", "-c", "/bin/bash"]
-
-# set up working directory
-ENV HOME /home/user
+# setup environment variables
+ENV HOME /home/$USER
 ENV GOPATH $HOME/go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
-RUN chown user:user -R "$HOME"
-# WORKDIR $HOME/go
+
+# install go packages
+RUN go get -u github.com/kardianos/govendor
+RUN go get -u github.com/cweill/gotests/...
 
 # set up working directory
-WORKDIR /home/user
-ENV HOME /home/user
+RUN chown $USER:$USER -R "$HOME"
+WORKDIR $HOME
+
+# initialize the user profile from the skeleton profile
+RUN cp /etc/skel/.bashrc /home/$USER/.bashrc \
+  && echo 'PS1="\\w\$ "' >> /home/$USER/.bashrc \
+  && echo 'PATH="/usr/local/go/bin:$GOPATH/bin:$HOME/bin:$PATH"' >> /home/$USER/.bashrc
+
+RUN . /home/$USER/.profile
