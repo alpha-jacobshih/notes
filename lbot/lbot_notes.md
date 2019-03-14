@@ -156,6 +156,10 @@ git push heroku master
 
 [sticker list](https://devdocs.line.me/files/sticker_list.pdf)
 
+1. emoji
+
+[emoji unicode tables](https://apps.timwhitlock.info/emoji/tables/unicode)
+
 ---
 
 
