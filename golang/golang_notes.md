@@ -134,6 +134,25 @@
             /usr/lib/go-1.6/bin/godef
             ```
 
+### atom text editor
+
+* install atom using snap
+
+```
+sudo snap install atom --classic
+```
+
+* install atom packages to turn atom into an ide.
+
+    * open up the settings view using **ctrl+,**, click on the "install" tab and
+      install packages:
+
+          * atom-ide-ui
+          * go-plus
+          * go-outline
+
+    * get and install go-outline-parser to parse and generate the syntax and structures to be used in go-outline.
+
 ---
 
 ### web-based ide for go language.
