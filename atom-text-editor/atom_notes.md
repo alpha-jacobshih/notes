@@ -79,3 +79,29 @@ sudo snap install atom --classic
     ```
     sudo python -m pip install importmagic
     ```
+
+## atom text editor settings
+
+select from menu Edit -> Preferences, or press `ctrl + ,` to open the preferences/settings view.
+
+### Editor 
+
+- **Atomic Soft Tabs**: disabled
+- **Soft Tabs**: enabled
+- **Tab Length**: 2
+- **Tab Type**: soft
+
+### atom-beautify
+
+- Python
+
+    - **Indent Size**: 4
+
+### python-import-magic
+
+- Keybindings
+
+    - **ctrl-alt-i ctrl-alt-u**: python-import-magic:update-imports
+    - **ctrl-alt-i ctrl-alt-w**: python-import-magic:import-word
+    - **ctrl-alt-i ctrl-alt-r**: python-import-magic:reindex
+
