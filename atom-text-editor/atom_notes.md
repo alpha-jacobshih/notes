@@ -28,6 +28,7 @@ sudo snap install atom --classic
       * minimap
       * minimap-highlight-selected
       * script
+      * tool-bar
 
 ### install packages fot golang
 
