@@ -1,6 +1,6 @@
 # Install Android 7.1.2 Nougat on Google Nexus 7 2012
 
-[How To Install Android 7.1.2 Nougat on Google Nexus 7 2012 (3G/WiFi)](https://www.getdroidtips.com/download-install-gapps-cm14-cm14-1-roms/)
+[How To Install Android 7.1.2 Nougat on Google Nexus 7 2012 (3G/WiFi)](https://www.getdroidtips.com/android-7-1-2-nougat-nexus-7-2012/)
 
 - Download AOSP Android 7.1.2 Nougat for Nexus 7 2012
 
