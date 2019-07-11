@@ -45,6 +45,7 @@
 ## references
 * [docker_practice](https://philipzheng.gitbooks.io/docker_practice/content/)
 * [docker_theory_install](https://joshhu.gitbooks.io/docker_theory_install/content/)
+* [write excellent dockerfile](https://blog.fundebug.com/2017/05/15/write-excellent-dockerfile/)
 
 <a name="docker_basic" />
 
