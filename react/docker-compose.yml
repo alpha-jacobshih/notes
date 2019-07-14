@@ -1,0 +1,28 @@
+version: '3'
+services:
+    react:
+        build:
+            context: .
+            dockerfile:  ./dockerfiles/react.dockerfile
+        image: utara/react:0.01
+        user: "${UID}:${GID}"
+        expose:
+        - 80
+        - 8080
+        - 8000
+        - 3000
+        - 5000
+        ports:
+        - "10080:80"
+        - "18080:8080"
+        - "18000:8000"
+        - "13000:3000"
+        - "15000:5000"
+        volumes:
+        - ~/volumes/utara/react:/home/user/react
+        working_dir: /home/user/react
+        container_name: react
+        entrypoint: /bin/sh
+        stdin_open: true
+        tty: true
+
