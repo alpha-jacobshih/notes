@@ -156,23 +156,23 @@
 
 ### run a docker and check ubuntu version of docker image
 
-    ```
-    jacob_shih:dockertest$ docker run --rm ubuntu:10.04 lsb_release -a
-    No LSB modules are available.
-    Distributor ID: Ubuntu
-    Description:    Ubuntu 10.04 LTS
-    Release:        10.04
-    Codename:       lucid
-    ```
+```
+jacob_shih:dockertest$ docker run --rm ubuntu:10.04 lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 10.04 LTS
+Release:        10.04
+Codename:       lucid
+```
 
-    ```
-    jacob_shih:dockertest$ docker run --rm ubuntu:14.04 lsb_release -a
-    Distributor ID: Ubuntu
-    Description:    Ubuntu 14.04.5 LTS
-    Release:        14.04
-    Codename:       trusty
-    No LSB modules are available.
-    ```
+```
+jacob_shih:dockertest$ docker run --rm ubuntu:14.04 lsb_release -a
+Distributor ID: Ubuntu
+Description:    Ubuntu 14.04.5 LTS
+Release:        14.04
+Codename:       trusty
+No LSB modules are available.
+```
 
 <a name="create_a_container" />
 
