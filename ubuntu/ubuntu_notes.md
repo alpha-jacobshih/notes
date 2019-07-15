@@ -59,6 +59,12 @@
     sudo update-grub
     ```
 
+- update the initramfs
+
+    ```
+    sudo update-initramfs -u
+    ```
+
 - reboot
 
 ## install chinese input method on ubuntu 16.04
