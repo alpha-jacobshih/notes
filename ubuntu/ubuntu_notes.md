@@ -67,6 +67,14 @@
 
 - reboot
 
+## install gnome tweak tool for advanced GNOME 3 settings.
+
+- install gnome tweak tool
+
+    ```
+    sudo apt-get install gnome-tweaks
+    ```
+
 ## install chinese input method on ubuntu 16.04
 
 - System Settings--> Language Support--> Install/Remove Languages
