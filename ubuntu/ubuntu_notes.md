@@ -65,6 +65,19 @@
     sudo update-initramfs -u
     ```
 
+- modify login manager configuration file
+
+    ```
+    sudoedit /etc/systemd/logind.conf
+    ```
+
+    modify the lines.
+
+    ```
+    HandleSuspendKey=hibernate
+    HandleLidSwitch=hibernate
+    ```
+
 - reboot
 
 ## install gnome tweak tool for advanced GNOME 3 settings.
