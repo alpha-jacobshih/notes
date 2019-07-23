@@ -4,12 +4,17 @@ RUN apt-get update \
     && apt-get install -y \
     apt-utils \
     curl \
+    git \
     tzdata \
+    wget \
     sudo
 
 # nodejs
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - \
     && apt-get install -y nodejs
+
+# install heroku cli
+RUN wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
 # add user
 ENV USER=user
