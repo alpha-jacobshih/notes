@@ -2,6 +2,12 @@
 # line bot
 
 1. [references](#references)
+1. [line official account](#line_official_account)
+1. [create a bot with the messaging api](#messaging_api)
+1. [create a new app in heroku](#create_new_app_in_heroku)
+1. [setup development environment](#setup_development_environment)
+1. [build a line bot from LineBotTemplate](#LineBotTemplate)
+1. [resources](#resources)
 
 ---
 
@@ -13,6 +19,8 @@
 * [LineBotTemplate](https://github.com/kkdai/LineBotTemplate/blob/master/README.md)
 
 ---
+
+<a name="line_official_account" />
 
 ## line official account
 
@@ -55,6 +63,8 @@
         - click 'LINE Developers' to launch develop settings for the bot.
 
 ---
+
+<a name="messaging_api" />
 
 ## create a bot with the messaging api
 
@@ -107,7 +117,9 @@
 
 ---
 
-## Create a new app in heroku
+<a name="create_new_app_in_heroku" />
+
+## create a new app in heroku
 
 [Create New App](https://dashboard.heroku.com/new-app?template=)
 
@@ -115,11 +127,17 @@
 
 ---
 
+<a name="setup_development_environment" />
+
 ## setup development environment
 
 ### create a docker container for golang and heroku cli.
 
 [docker container for golang and heroku](https://github.com/alpha-jacobshih/notes/blob/master/heroku/heroku_notes.md#setup_environment)
+
+---
+
+<a name="LineBotTemplate" />
 
 ## build a line bot from LineBotTemplate
 
@@ -145,6 +163,8 @@ git push heroku master
 ```
 
 ---
+
+<a name="resources" />
 
 ## resources
 
