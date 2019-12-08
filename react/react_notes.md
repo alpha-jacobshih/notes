@@ -68,4 +68,15 @@ sudo apt-get install -y nodejs
 
     The most important difference between state and props is that props are passed from a parent component, but state is managed by the component itself.
 
+## notes
+
+### PropTypes
+
+React.PropTypes has moved into a different package since React v15.5. Please use the prop-types library instead.
+
+```
+import PropTypes from 'prop-types'
+```
+
+
 
