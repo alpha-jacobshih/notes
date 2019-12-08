@@ -14,6 +14,48 @@
 
 ---
 
+## line official account
+
+### create new line official account
+
+[create a line official account](https://www.linebiz.com/id-en/service/line-account-connect/)
+
+- click [register standard](https://entry.line.biz/form/unverified)
+
+    - input the name of the line official account.
+    - select category and subcategory.
+
+
+[line official account manager](https://manager.line.biz)
+
+- accounts -> {account name} -> settings
+
+    - account settings
+
+        - add profile photo and status.
+        - choose cover photo.
+        - enable/disable group and multi-person chats.
+
+    - response settings
+
+        - main settings
+
+            - response mode : bot (use webhook to response)
+
+        - detailed settings
+
+            - auto-response : disabled
+            - webhook : enabled
+
+    - messaging api
+
+        - enable messaging api and select (or create) a provider.
+        - copy and save the channel id and secret used for app.
+        - set the webhook url.
+        - click 'LINE Developers' to launch develop settings for the bot.
+
+---
+
 ## create a bot with the messaging api
 
 ### messaging api
@@ -28,86 +70,50 @@
 
 - create new channel
 
-    - app name
+    - channel name
 
-    - app description
+    - channel description
 
-    - plan
+    - select category and subcategory.
 
-        - developer trial
+    - ~~~plan~~~
 
-            to create a bot that can send push messages and have **up to 50 friends**.
+        - ~~~developer trial~~~
 
-        - free
+            ~~~to create a bot that can send push messages and have **up to 50 friends**.~~~
 
-            to create a bot with an **unlimited** number of friends. **push messages cannot be sent** with this plan.
+        - ~~~free~~~
 
-- messaging settings
+            ~~~to create a bot with an **unlimited** number of friends. **push messages cannot be sent** with this plan.~~~
 
-    - use webhooks: enabled
+- channel settings
 
-    - allow bot to join group chats
+    - basic settings
 
-        - enabled: to allow bot to join group chats.
-        - disabled: not allow to join group chats.
+        - channel secret is unique secret key for the channel.
 
-    - auto-reply messages
+          *set to channel secret to conf vars on settings page of heroku.*
 
-        - disabled: not to send preset message (set from Line@ Manager) automatically when a user sends a message to bot.
-
-    - greeting messages
-
-        - enabled: send preset message (set from Line@ Manager) automatically when a user adds the bot as a friend.
-
-    - channel id
-
-        - unique identifier of the channel.
-
-    - channel secret
-
-        - unique secret key for the channel.
-        - set to channel secret to conf vars on settings page of heroku.
-
-        *heroku dashboard -> settings -> Config Vars -> ChannelSecret*
-
-    - channel access token
-
-        - long-lived token require for making api calls.
-        - set to channel access token to conf vars on settings page of heroku.
-
-        *heroku dashboard -> settings -> Config Vars -> ChannelAccessToken*
-
-    - webhook url
-
-        - server endpoint url that receives requests from the line platform when a webhook is triggered.
+            - *heroku dashboard -> settings -> Config Vars -> ChannelSecret*
 
 
----
+    - messaging api
 
-## LINE@ MANAGER
+        - webhook url
 
-### configure and manager the line@ account.
+            - the url of an endpoint on your server that can process webhook events sent by the line platform.
 
-(LINE@ MANAGER)[https://admin-official.line.me]
+        - use webhook : enabled.
 
-Accounts -> {account name}
+            - if webhook is enabled, the line platform sends a request to your webhook url every time a user sends a message.
 
-- Add your own profile photo and status message.
-- Choose your cover photo.
-- Display your account for the world to see!
-- Add a personal touch to the greeting message sent to users when they friend your account.
-- Make your account page as attractive as possible.
+        - channel access token
 
+            - use channel access token to call messaging api, click issue button to generate a new token.
 
-### enable messaging api
+            - set the channel access token to config vars on settings page of heroku.
 
-settings -> messaging api settings
-
-- click 'Enable API' button with selected provider.
-
-### messaging api settings
-
-- click the button 'LINE Developers' to launch develop settings for the bot.
+              *heroku dashboard -> settings -> Config Vars -> ChannelAccessToken*
 
 ---
 
