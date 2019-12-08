@@ -76,16 +76,6 @@
 
     - select category and subcategory.
 
-    - ~~~plan~~~
-
-        - ~~~developer trial~~~
-
-            ~~~to create a bot that can send push messages and have **up to 50 friends**.~~~
-
-        - ~~~free~~~
-
-            ~~~to create a bot with an **unlimited** number of friends. **push messages cannot be sent** with this plan.~~~
-
 - channel settings
 
     - basic settings
