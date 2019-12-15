@@ -15,6 +15,7 @@
 ## references
 * [golang official repository](https://hub.docker.com/_/golang/)
 * [About Go Language - An Overview](https://blog.learngoprogramming.com/about-go-language-an-overview-f0bee143597c)
+* [effortless class diagrams for all your golang needs](https://www.jazzcoding.com/effortless-class-diagrams-for-all-your-golang-needs/)
 
 ---
 
