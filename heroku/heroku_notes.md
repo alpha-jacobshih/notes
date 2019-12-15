@@ -11,6 +11,7 @@
 ## references
 * [heroku](https://www.heroku.com/)
 * [heroku wiki](https://en.wikipedia.org/wiki/Heroku)
+* [github integration (heroku github deploys)](https://devcenter.heroku.com/articles/github-integration)
 
 ---
 
@@ -44,7 +45,7 @@
     ```
 
     - create and start the container in background.
-    
+
     ```
     docker-compose up -d
     ```
@@ -97,7 +98,7 @@ user@c6953705ddd9:~/herokugo/src/jxlbot$ gofmt -w .
 * commit and push code and it will be built automatically in heroku
 
 ```
-user@c6953705ddd9:~/herokugo/src/jxlbot$ git add main.go 
+user@c6953705ddd9:~/herokugo/src/jxlbot$ git add main.go
 user@c6953705ddd9:~/herokugo/src/jxlbot$ git commit -m 'What - [jxlbot] add a function to process received message.'
 user@c6953705ddd9:~/herokugo/src/jxlbot$ git push heroku master
 ```
@@ -116,5 +117,3 @@ user@c6953705ddd9:~/herokugo/src/jxlbot$ git push heroku master
     * [managing dependencies with govendor](https://jonathanmh.com/managing-dependencies-govendor-heroku-dokku/)
 
 ---
-
-
