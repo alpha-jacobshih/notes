@@ -74,6 +74,14 @@ git pull origin master
     ssh-add ~/.ssh/id_rsa
     ```
 
+- caching github password in git.
+
+    ```
+    git config --global credential.helper 'cache --timeout=3600'
+    ```
+
+    Set the cache to timeout after 1 hour (setting is in seconds)
+
 ---
 
 <a name="move_repository" />
